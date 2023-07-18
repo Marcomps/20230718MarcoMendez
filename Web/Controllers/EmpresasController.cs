@@ -12,11 +12,11 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetListaEmpresasa(int id)
+        public IActionResult GetListaEmpresa(int idEmpresa)
         {
             var empres = new ListaEmpresa();
-            var listaEmpresas = empres.GetListEmpresas(id);
-            return View(listaEmpresas);
+            var listaEmpresa = empres.GetListEmpresas(idEmpresa);
+            return View(listaEmpresa);
         }
 
     }

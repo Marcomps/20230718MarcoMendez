@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AFP_Test.AplicacionCore.Caracteristicas.Departamento;
+using AFP_Test.AplicacionCore.Caracteristicas.Empresa;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
@@ -7,6 +9,14 @@ namespace Web.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult GetListaDepartamento(int idDepartamento)
+        {
+            var empres = new ListaDepartamento();
+            var lestDepartamento = empres.GetListDepartamento(idDepartamento);
+            return View(lestDepartamento);
         }
     }
 }

@@ -6,6 +6,12 @@ namespace CoreTest
     public class UnitTest1
     {
         private readonly ListaDepartamento _listaDepartamento;
+
+        public UnitTest1()
+        {
+            _listaDepartamento = new ListaDepartamento();
+        }
+
         [Fact]
         public void GetListEmpresas()
         {
