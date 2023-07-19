@@ -1,1 +1,32 @@
-﻿@model IEnumerable<AFP_Test.Infraestructura.Models.Departamentos>
+﻿@*@model IEnumerable<AFP_Test.Infraestructura.Models.Departamentos>
+*@
+
+@model IEnumerable<DepartamentoViewModel>
+
+@{
+    ViewData["Title"] = "Departamento";
+}
+
+<table class="table table-striped">
+    <thead class="table table-dark">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IdDepartamento)</th>
+        <th>@Html.DisplayNameFor(model => model.NombreDepartamento)</th>
+        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+        <th>@Html.DisplayNameFor(model => model.RazonSocial)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <tr> 
+                <td>@Html.DisplayFor(model => item.IdDepartamento)</td>
+                <td>@Html.DisplayFor(model => item.NombreDepartamento)</td>
+                <td>@Html.DisplayFor(model => item.Nombre)</td>
+                <td>@Html.DisplayFor(model => item.RazonSocial)</td>
+            </tr>
+        }
+    </tr>
+    </tbody>
+</table>

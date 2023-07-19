@@ -2,6 +2,7 @@
 using AFP_Test.AplicacionCore.Caracteristicas.Empresa;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Web.Models;
 
 namespace Web.Controllers
 {
@@ -20,11 +21,14 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetListaDepartamento(int idDepartamento)
+        public IActionResult DepartamentoLista(int idDepartamento)
         {
-            var empres = new ListaDepartamento();
-            var lestDepartamento = empres.GetListDepartamento(idDepartamento);
-            return View(lestDepartamento);
+            var empresaLista = new ListaDepartamento();
+
+            List<DepartamentoViewModel> listaDepartamento =
+                _mapper.Map<List<DepartamentoViewModel>>(empresaLista.GetListDepartamento(idDepartamento));
+
+            return View(listaDepartamento);
         }
     }
 }

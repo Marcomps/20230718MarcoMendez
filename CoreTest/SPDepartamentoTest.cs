@@ -13,15 +13,15 @@ namespace CoreTest
         }
 
         [Fact]
-        public void GetListEmpresas()
+        public void GetListDepartamento()
         {
-            var id = 1;
+            var id = 2;
             var ressult = _listaDepartamento.GetListDepartamento(id);
             Assert.True(ressult.Count > 0);
         }
 
         [Fact]
-        public void FailGetEmpresas()
+        public void FailGetDepartamento()
         {
             var id = 1000;
             var ressult = _listaDepartamento.GetListDepartamento(id);

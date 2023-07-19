@@ -22,12 +22,12 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult ListaEmpresas(int idEmpresa)
         {
-            //List<ProductViewModels> prodList = _mapper.Map<List<ProductViewModels>>(db.Products.ToList());
             var empresaLista = new ListaEmpresa();
 
-            List<EmpresaViewModel> listaEmpresa = _mapper.Map<List<EmpresaViewModel>>(empresaLista.GetListEmpresas(idEmpresa)); //empres.GetListEmpresas(idEmpresa);
+            List<EmpresaViewModel> listaEmpresa = 
+                _mapper.Map<List<EmpresaViewModel>>(empresaLista.GetListEmpresas(idEmpresa));
+
             return View(listaEmpresa);
         }
-
     }
 }

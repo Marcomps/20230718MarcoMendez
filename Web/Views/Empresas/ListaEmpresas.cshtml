@@ -11,17 +11,18 @@
         <th>@Html.DisplayNameFor(model => model.RazonSocial)</th>
         <th>@Html.DisplayNameFor(model => model.Bitacora)</th>
         <th>@Html.DisplayNameFor(model => model.FechaDeRegistro)</th>
-        <th></th>
     </tr>
     </thead>
     <tbody>
     <tr>
         @foreach (var item in Model)
         {
+            <tr>
                 <td>@Html.DisplayFor(model => item.Nombre)</td>
                 <td>@Html.DisplayFor(model => item.RazonSocial)</td>
                 <td>@Html.DisplayFor(model => item.Bitacora)</td>
                 <td>@Html.DisplayFor(model => item.FechaDeRegistro)</td>
+            </tr>
         }
     </tr>
     </tbody>
