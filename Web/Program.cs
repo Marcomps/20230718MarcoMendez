@@ -1,12 +1,23 @@
 using AutoMapper;
+using Web.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+//Mapper
+var mapperConfig = new MapperConfiguration(m =>
+{
+    m.AddProfile(new MappingProfile());
+});
 
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddMvc();
+builder.Services.AddMvcCore();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

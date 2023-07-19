@@ -1,6 +1,6 @@
 ﻿namespace Web.Models
 {
-    public class Empresa
+    public class EmpresaViewModel
     {
         public int IdEmpresa { get; set; }
         public string Nombre { get; set; }

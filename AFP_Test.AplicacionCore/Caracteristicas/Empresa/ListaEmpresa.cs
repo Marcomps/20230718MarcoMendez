@@ -16,9 +16,9 @@ namespace AFP_Test.AplicacionCore.Caracteristicas.Empresa
             using (var db = new DB_AFPContext())
             {
                 SqlParameter parametro = new SqlParameter("@IdEmpresa", idEmpresa);
-                var empleado = db.Empresa.FromSqlRaw("EXECUTE [GetEmpresaPorID] @IdEmpresa", parametro).ToList();
+                var empresaLista = db.Empresa.FromSqlRaw("EXECUTE [GetEmpresaPorID] @IdEmpresa", parametro).ToList();
 
-                return empleado;
+                return empresaLista;
             }
         }
     }

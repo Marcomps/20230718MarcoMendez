@@ -1,11 +1,19 @@
 ﻿using AFP_Test.AplicacionCore.Caracteristicas.Departamento;
 using AFP_Test.AplicacionCore.Caracteristicas.Empresa;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
     public class DepartamentoController : Controller
     {
+
+        private readonly IMapper _mapper;
+
+        public DepartamentoController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
         public IActionResult Index()
         {
             return View();

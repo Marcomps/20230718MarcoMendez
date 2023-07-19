@@ -3,11 +3,11 @@ using AFP_Test.Infraestructura.Models;
 
 namespace CoreTest
 {
-    public class UnitTest1
+    public class SPDepartamentoTest
     {
         private readonly ListaDepartamento _listaDepartamento;
 
-        public UnitTest1()
+        public SPDepartamentoTest()
         {
             _listaDepartamento = new ListaDepartamento();
         }
@@ -17,8 +17,15 @@ namespace CoreTest
         {
             var id = 1;
             var ressult = _listaDepartamento.GetListDepartamento(id);
-            var empresa = Assert.IsType<List<Empresa>>(ressult.Count);
-            Assert.True(empresa.Count > 0);
+            Assert.True(ressult.Count > 0);
+        }
+
+        [Fact]
+        public void FailGetEmpresas()
+        {
+            var id = 1000;
+            var ressult = _listaDepartamento.GetListDepartamento(id);
+            Assert.False(ressult.Count < 0);
         }
     }
 }
